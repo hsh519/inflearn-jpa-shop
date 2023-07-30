@@ -1,0 +1,23 @@
+# h2 DB 설정
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    # 어플리케이션 실행 시 테이블 설정
+    hibernate:
+      ddl-auto: create
+    # SQL문에 대한 설정 (실행되는 SQL문 보여주기, SQL문 형식화)
+    properties:
+      hibernate:
+        format_sql: true
+#        show_sql: true # System.out으로 출력
+
+# 실행되는 SQL문을 로그로 출력
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type: trace
